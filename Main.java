@@ -16,7 +16,8 @@ public class Main {
     public static void main(String[] args) {
         String[] valores = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         String[] palo = {"Corazon", "Pika", "Diamante", "Trebol"};
-        Baraja baraja = new Baraja();
+        Baraja baraja;
+        baraja = new Baraja();
         baraja.crearBaraja(palo, valores);
         baraja.showMenu();
         baraja.mezclar();

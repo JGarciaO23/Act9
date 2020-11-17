@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
 /**
  *
  * @author JGarciaO.23
@@ -55,6 +54,66 @@ public class Baraja {
         System.out.println("Tamaño de la baraja:" + cartas.size());
     }
     
+    public void pick(){
+        Carta carta = cartas.get(5);
+        System.out.println("Tu carta es color: " + carta.color);
+        System.out.println("Pertenece al palo: " + carta.palo);
+        System.out.println("Tiene un valor de: " + carta.valor);
+        cartas.remove(5);
+        Collections.shuffle(cartas);
+        System.out.println("Tamaño: " + cartas.size());
+    }
+    
+    public void hand(){
+    Carta carta = cartas.get(8);
+    System.out.println ("Carta 5");
+    System.out.println("Tu carta es color: " + carta.color);
+    System.out.println("Pertenece al palo de: " + carta.palo);
+    System.out.println("Tiene un valor de: " + carta.valor);
+    cartas.remove(8);
+    Collections.shuffle(cartas);
+    System.out.println("Tamaño" + cartas.size());}
+    
+    { 
+    Carta carta = cartas.get(6);
+    System.out.println ("Carta 5");
+    System.out.println("Tu carta es color: " + carta.color);
+    System.out.println("Pertenece al palo de: " + carta.palo);
+    System.out.println("Tiene un valor de: " + carta.valor);
+    cartas.remove(6);
+    Collections.shuffle(cartas);
+    System.out.println("Tamaño: " + cartas.size());}
+    
+    {
+    Carta carta = cartas.get(10);
+    System.out.println ("Carta 5");
+    System.out.println("Tu carta es color: " + carta.color);
+    System.out.println("Pertenece al palo de: " + carta.palo);
+    System.out.println("Tiene un valor de: " + carta.valor);
+    cartas.remove(10);
+    Collections.shuffle(cartas);
+    System.out.println("Tamaño: " + cartas.size());}
+    
+    {
+    Carta carta = cartas.get(15);
+    System.out.println ("Carta 5");
+    System.out.println("Tu carta es color: " + carta.color);
+    System.out.println("Pertenece al palo de: " + carta.palo);
+    System.out.println("Tiene un valor de: " + carta.valor);
+    cartas.remove(15);
+    Collections.shuffle(cartas);
+    System.out.println("Tamaño: " + cartas.size());}
+    
+    {
+    Carta carta = cartas.get(12);
+    System.out.println ("Carta 5");
+    System.out.println("Tu carta es color: " + carta.color);
+    System.out.println("Pertenece al palo de: " + carta.palo);
+    System.out.println("Tiene un valor de: " + carta.valor);
+    cartas.remove(12);
+    Collections.shuffle(cartas);
+    System.out.println("Tamaño: " + cartas.size());}
+ 
     public void showMenu(){
         boolean salir = true;
         while (salir) {
@@ -95,19 +154,27 @@ public class Baraja {
                     break;
 
                 default:
-                    salir = false;
+                    System.out.println("Opción no válida");
+                    System.out.println("");
+                    break;
+                 
+                case 5:
+                    salir= false;
                     break;
             }
-          
+        
+        try {
+            if(cartas.size() <=0){
+                throw new Exception("Se han agotado las cartas " + "Ingresa el número 5 para salir");
+            }
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
         }
     }
-
-    void pick() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
-    void hand() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    }
+    
 
